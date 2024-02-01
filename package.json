@@ -1,6 +1,13 @@
 {
   "devDependencies": {
+    "bulma": "^0.9.4",
+    "css-loader": "^6.10.0",
     "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.7.7",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "simple-nunjucks-loader": "^3.2.0",
+    "style-loader": "^3.3.4",
     "webpack": "^5.90.0",
     "webpack-cli": "^5.1.4"
   },
