@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "name": "learnfrontend",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
