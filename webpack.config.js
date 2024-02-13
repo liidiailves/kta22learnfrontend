@@ -17,7 +17,13 @@ module.exports = {
     open: true,
   },
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.css$/,
+        // loeb tagantpoolt, seega järjekord oluline!
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
