@@ -1,3 +1,11 @@
 import "./style.scss";
+import { createApp, ref } from "vue";
 
-document.querySelector("button.button").classList.add("is-primary");
+const app = createApp({
+  setup() {
+    return {
+      count: ref(0),
+    };
+  },
+});
+app.mount("#app");
