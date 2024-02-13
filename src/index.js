@@ -1,11 +1,6 @@
 import "./style.scss";
-import { createApp, ref } from "vue";
+import { createApp } from "vue";
+import App from "./App.vue";
 
-const app = createApp({
-  setup() {
-    return {
-      count: ref(0),
-    };
-  },
-});
+const app = createApp(App);
 app.mount("#app");
