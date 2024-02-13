@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    clean: true,
   },
   devServer: {
     static: {
@@ -23,6 +24,11 @@ module.exports = {
         test: /\.css$/,
         // loeb tagantpoolt, seega järjekord oluline!
         use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.s[ca]ss$/,
+        // loeb tagantpoolt, seega järjekord oluline!
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
