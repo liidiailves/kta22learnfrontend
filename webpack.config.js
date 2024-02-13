@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let pages = [];
 for (let i = 0; i < 10; i++) {
@@ -15,12 +15,19 @@ for (let i = 0; i < 10; i++) {
 }
 
 module.exports = {
-  // mode: 'development',
+  //   mode: 'development',
   entry: "./src/index.js",
   output: {
-    // dirname annab alati täispika asukoha
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 9000,
+    open: true,
   },
   module: {
     rules: [
@@ -37,9 +44,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    new HtmlWebpackPlugin({
       filename: "about.html",
       template: "./src/index.html",
     }),
-    ...pages, // pages[0], pages[1] jne
+    ...pages, //pages[0], pages[1], ...
   ],
 };

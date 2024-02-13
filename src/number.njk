@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ number }}</h1>
+    {% for i in range(1, 10) %}
+        <a href="{{i}}.html">{{i}}</a>
+    {% endfor %}
+    <h1>{{ number }} Hello</h1>
 </body>
 </html>
