@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
-import ItemList from '../ItemList.vue';
+import ItemList from '../components/ItemList.vue';
 
 let count = ref(0);
 let message = ref('Hello vue');
