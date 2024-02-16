@@ -6,6 +6,8 @@
 <template>
   <Tabs></Tabs>
   <div class="container mt-3">
+    <Suspense>
     <RouterView></RouterView>
+  </Suspense>
   </div>
 </template>
