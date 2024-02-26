@@ -5,6 +5,7 @@ import {
   createWebHashHistory,
   createWebHistory,
 } from "vue-router";
+import Buefy from "@ntohq/buefy-next";
 
 import Home from "./pages/Home.vue";
 import ToDo from "./pages/ToDo.vue";
@@ -43,4 +44,5 @@ const app = createApp(App);
 // Make sure to _use_ the router instance to make the
 // whole app router-aware.
 app.use(router);
+app.use(Buefy);
 app.mount("#app");
