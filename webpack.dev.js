@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -19,6 +20,9 @@ module.exports = {
     port: 9000,
     open: true,
     historyApiFallback: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   resolve: {
     alias: {
@@ -53,5 +57,13 @@ module.exports = {
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
     }),
     new VueLoaderPlugin(),
+
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, //10485760,
+    }),
   ],
 };
