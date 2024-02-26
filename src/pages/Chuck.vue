@@ -12,7 +12,7 @@ axios.get('https://api.chucknorris.io/jokes/random').then(response => {
 axios.get('http://localhost:3000').then(response => {
     console.log(response);
     joke2.value = response.data.joke;
-});
+}).catch(() => {});
 </script>
 
 <template>
